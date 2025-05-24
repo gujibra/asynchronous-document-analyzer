@@ -1,0 +1,15 @@
+services:
+  encurta_db:
+    container_name: msUser
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: msUser
+      POSTGRES_USER: adminuser
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata_msuser:/var/lib/postgres/data
+
+volumes:
+  pgdata_msuser: {}
